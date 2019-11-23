@@ -5,15 +5,17 @@ import {getProductos_action} from "../redux/actions/productosActions";
 
 const Productos = () => {
 
+  const libros = useSelector((state) => state.productos.productos);
+  const loading = useSelector((state) => state.productos.loading);
+
+
   const dispatch = useDispatch();
   const getLibros = () => dispatch(getProductos_action());
 
   useEffect(() => {
     getLibros();
-  }, []);
+  },[]);
 
-  const libros = useSelector((state) => state.productos.productos);
-  const loading = useSelector((state) => state.productos.loading);
 
   return (
     <React.Fragment>
@@ -21,12 +23,14 @@ const Productos = () => {
 
       <table className="table table-striped">
         <thead className="bg-primary table-dark">
-        <th scope="col">Nombre:</th>
-        <th scope="col">Precio:</th>
-        <th scope="col">Acciones</th>
+        <tr>
+          <th scope="col">Nombre:</th>
+          <th scope="col">Precio:</th>
+          <th scope="col">Acciones</th>
+        </tr>
         </thead>
         <tbody>
-        {libros.map(l => <Producto producto={l}/>)}
+        {libros.map(l => <Producto key={l.id} producto={l}/>)}
         </tbody>
       </table>
       {loading ? <h2>Loading...</h2> : null}

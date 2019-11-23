@@ -11,19 +11,9 @@
       "precio": 40
     },
     {
-      "nombre": "El principito",
-      "precio": "200",
-      "id": 4
-    },
-    {
-      "nombre": "el principito",
-      "precio": "200",
-      "id": 5
-    },
-    {
-      "nombre": "Te quiero",
-      "precio": "1000",
-      "id": 6
+      "id": 4,
+      "nombre": "Hola, te amo",
+      "precio": "233"
     },
     {
       "nombre": "Tu y yo",
@@ -46,14 +36,59 @@
       "id": 10
     },
     {
-      "nombre": "Otro libro",
-      "precio": "200",
+      "nombre": "I want be with you",
+      "precio": "400",
       "id": 11
     },
     {
-      "nombre": "I dont want you ",
-      "precio": "500",
+      "nombre": "Other",
+      "precio": "200",
       "id": 12
+    },
+    {
+      "nombre": "Otro libro",
+      "precio": "400",
+      "id": 13
+    },
+    {
+      "nombre": "abrs",
+      "precio": "230",
+      "id": 14
+    },
+    {
+      "nombre": "verifing",
+      "precio": "343",
+      "id": 15
+    },
+    {
+      "nombre": "no",
+      "precio": "200",
+      "id": 17
+    },
+    {
+      "nombre": "antuan",
+      "precio": "200",
+      "id": 18
+    },
+    {
+      "nombre": "try",
+      "precio": "200",
+      "id": 19
+    },
+    {
+      "nombre": "Intento",
+      "precio": "400",
+      "id": 20
+    },
+    {
+      "nombre": "yabasta",
+      "precio": "200",
+      "id": 21
+    },
+    {
+      "nombre": "tryd",
+      "precio": "200",
+      "id": 22
     }
   ]
 }

@@ -19,12 +19,9 @@ const NuevoProducto = ({history}) => {
       setError(true);
       return;
     }
-
     setError(false);
-    agregarProducto({
-      nombre,
-      precio,
-    });
+
+    agregarProducto({nombre, precio});
     history.push("/");
 
   };
