@@ -2,6 +2,9 @@ import {
   AGREGAR_PRODUCTO,
   AGREGAR_PRODUCTO_EXITO,
   AGREGAR_PRODUCTO_ERROR,
+  GET_PRODUCTOS,
+  GET_PRODUCTOS_EXITO,
+  GET_PRODUCTOS_ERROR
 } from "../actions/actions";
 
 const initialState = {
@@ -19,6 +22,14 @@ const productosReducer = (state = initialState, action) => {
         loading: true,
       };
 
+    case AGREGAR_PRODUCTO_EXITO:
+      return {
+        ...state,
+        error: false,
+        loading: false,
+        productos: [...state.productos, action.payload]
+      };
+
     case AGREGAR_PRODUCTO_ERROR:
       return {
         ...state,
@@ -26,12 +37,24 @@ const productosReducer = (state = initialState, action) => {
         loading: false,
       };
 
-    case AGREGAR_PRODUCTO_EXITO:
+    case GET_PRODUCTOS:
+      return {
+        ...state,
+        error: false,
+        loading: true,
+      };
+    case GET_PRODUCTOS_EXITO:
       return {
         ...state,
         error: false,
         loading: false,
-        productos: [...state.productos, action.payload]
+        productos: [...action.payload]
+      };
+    case GET_PRODUCTOS_ERROR:
+      return {
+        ...state,
+        error: true,
+        loading: false,
       };
 
 

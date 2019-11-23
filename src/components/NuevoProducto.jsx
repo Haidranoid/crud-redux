@@ -1,11 +1,12 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
 import {agregarProducto_action} from "../redux/actions/productosActions";
 
-const NuevoProducto = () => {
+const NuevoProducto = ({history}) => {
 
   const [nombre, setNombre] = useState('');
   const [precio, setPrecio] = useState('');
+  const [error, setError] = useState('');
 
   const dispatch = useDispatch();
   const agregarProducto = producto => dispatch(agregarProducto_action(producto));
@@ -15,14 +16,16 @@ const NuevoProducto = () => {
     e.preventDefault();
     //validar formulario
     if (nombre === '' || precio === '') {
-      alert("Los campos deben ser llenados");
+      setError(true);
       return;
     }
 
+    setError(false);
     agregarProducto({
       nombre,
       precio,
-    })
+    });
+    history.push("/");
 
   };
 
@@ -57,7 +60,10 @@ const NuevoProducto = () => {
               <button type="submit" className="btn btn-primary font-weight-bold text-uppercase d-block w-100">Agregar
               </button>
             </form>
-
+            {error
+              ? <div className="font-weight-bold alert alert-danger
+               text-enter mt-4">Todos los campos son obligatorios</div>
+              : null}
           </div>
         </div>
       </div>
