@@ -9,6 +9,21 @@
       "id": 3,
       "nombre": "React y Redux",
       "precio": 40
+    },
+    {
+      "nombre": "El principito",
+      "precio": "200",
+      "id": 4
+    },
+    {
+      "nombre": "el principito",
+      "precio": "200",
+      "id": 5
+    },
+    {
+      "nombre": "Te quiero",
+      "precio": "1000",
+      "id": 6
     }
   ]
 }
