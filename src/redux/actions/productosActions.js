@@ -5,21 +5,31 @@ import {
   AGREGAR_PRODUCTO_ERROR,
 } from "./actions";
 
-export const agregarProducto_action = producto => dispatch =>{
+const url_db = process.env.REACT_APP_API_DB;
+
+export const agregarProducto_action = producto => dispatch => {
+
   dispatch(agregarProducto_start());
-  axios.get();
+
+  axios.post(`${url_db}/libros`, producto)
+    .then(response => {
+      dispatch(agregarProducto_exito(producto));
+    })
+    .catch(error => {
+      dispatch(agregarProducto_error());
+    })
 };
 
 const agregarProducto_start = () => ({
-  type:AGREGAR_PRODUCTO,
+  type: AGREGAR_PRODUCTO,
 });
 
 const agregarProducto_error = () => ({
-  type:AGREGAR_PRODUCTO_ERROR,
+  type: AGREGAR_PRODUCTO_ERROR,
 });
 
 const agregarProducto_exito = producto => ({
-  type:AGREGAR_PRODUCTO_EXITO,
+  type: AGREGAR_PRODUCTO_EXITO,
   payload: producto,
 });
 
