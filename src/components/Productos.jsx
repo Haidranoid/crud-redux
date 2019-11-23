@@ -13,6 +13,7 @@ const Productos = () => {
   }, []);
 
   const libros = useSelector((state) => state.productos.productos);
+  const loading = useSelector((state) => state.productos.loading);
 
   return (
     <React.Fragment>
@@ -20,12 +21,15 @@ const Productos = () => {
 
       <table className="table table-striped">
         <thead className="bg-primary table-dark">
-        {libros.map(l => <Producto producto={l}/>)}
+        <th scope="col">Nombre:</th>
+        <th scope="col">Precio:</th>
+        <th scope="col">Acciones</th>
         </thead>
         <tbody>
-
+        {libros.map(l => <Producto producto={l}/>)}
         </tbody>
       </table>
+      {loading ? <h2>Loading...</h2> : null}
     </React.Fragment>
   );
 };
