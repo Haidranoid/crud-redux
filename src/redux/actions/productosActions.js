@@ -7,7 +7,7 @@ import {
 
 export const agregarProducto_action = producto => dispatch =>{
   dispatch(agregarProducto_start());
-  dispatch(agregarProducto_error());
+  axios.get();
 };
 
 const agregarProducto_start = () => ({
