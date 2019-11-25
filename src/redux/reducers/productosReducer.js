@@ -38,7 +38,7 @@ const productosReducer = (state = initialState, action) => {
         ...state,
         error: false,
         loading: false,
-        productos: [...state.productos, action.payload]
+        // productos: [...state.productos, action.payload]
       };
 
     case AGREGAR_PRODUCTO_ERROR:

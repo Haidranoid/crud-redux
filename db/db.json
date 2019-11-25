@@ -89,6 +89,16 @@
       "nombre": "tryd",
       "precio": "200",
       "id": 22
+    },
+    {
+      "nombre": "Volverte a ver",
+      "precio": "400",
+      "id": 23
+    },
+    {
+      "nombre": "Aun te extraño",
+      "precio": "600",
+      "id": 24
     }
   ]
 }

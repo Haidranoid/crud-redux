@@ -27,6 +27,7 @@ export const agregarProducto_action = producto => dispatch => {
   axios.post(`${url_db}/libros`, producto)
     .then(response => {
       dispatch(agregarProducto_exito(producto));
+      dispatch(getProductos_action());
     })
     .catch(error => {
       dispatch(agregarProducto_error());
